@@ -15,7 +15,9 @@ let blogSchema = new mongoose.Schema({
         required: false
     },
     createdAt: {   
-        type: String,
+        type: Date,
+        required: false,
+        default: Date.now 
     },
 })
 let blogs = mongoose.model("blogs", blogSchema)
