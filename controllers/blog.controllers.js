@@ -22,11 +22,18 @@ let updateData = async(req, res) => {
     res.status(201).json({ message: "Success", data: await blogSchema.findById(id).exec()})
 }
 
+let deleteData = async (req, res) => {
+    let id = req.params.id
+    let data = await blogSchema.findByIdAndDelete(id)
+    
+    res.status(200).send( { message: "OK", data: data} )
+}
+
 
 export {
     getBlogs, 
     getBlogById,
     postData,
     updateData,
-    
+    deleteData
 }
