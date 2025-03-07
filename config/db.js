@@ -9,4 +9,4 @@ let connectDB = async () => {
     }
 }
 
-export {connectDB}
+export { connectDB }
